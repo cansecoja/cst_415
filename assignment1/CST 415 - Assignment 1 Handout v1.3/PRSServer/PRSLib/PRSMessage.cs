@@ -1,8 +1,8 @@
 ﻿// PRSMessage.cs
 //
-// Pete Myers
+// Juan Canseco
 // CST 415
-// Fall 2019
+// Fall 2020
 // 
 
 using System;
