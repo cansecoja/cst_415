@@ -31,12 +31,30 @@ namespace PRSTestClient
 
             // defaults
             string SERVER_IP = "127.0.0.1";
-            int SERVER_PORT = 30000;
 
-            // process command options
-            
-            ///////////
-            ///
+            int PRS_PORT = 30000;
+            int SERVER_PORT = 40000;
+            int ENDING_PORT = 40099;
+            int TIMEOUT = 300;
+
+            for (int i = 0; i < args.Length; i++)
+             {
+                 if (args[i] == "-p")
+                    PRS_PORT = int.Parse(args[i + 1]);
+                 if (args[i] == "-s")
+                    SERVER_PORT = int.Parse(args[i + 1]);
+                 if (args[i] == "-e")
+                    ENDING_PORT = int.Parse(args[i + 1]);
+                 if (args[i] == "-t")
+                    TIMEOUT = int.Parse(args[i + 1]);
+             }
+                //
+                //
+
+            Console.WriteLine(PRS_PORT);
+            Console.WriteLine(SERVER_PORT);
+            Console.WriteLine(ENDING_PORT);
+            Console.WriteLine(TIMEOUT);
 
             // tell user what we're doing
             Console.WriteLine("Test Client started...");
@@ -134,7 +152,19 @@ namespace PRSTestClient
 
             Console.WriteLine("TestCase 2 Started...");
 
-            // See test cases doc
+            // send {REQUEST_PORT, “SVC1”, 0, 0}
+            PRSMessage msg = new PRSMessage(PRSMessage.MESSAGE_TYPE.REQUEST_PORT, "SVC1", 0, 0);
+            SendMessage(clientSocket, endPt, msg);
+
+            // expect {RESPONSE, “SVC1”, 40000, SUCCESS}
+            ExpectMessage(clientSocket, "{RESPONSE, SVC1, 40000, SUCCESS}");
+
+            // send {CLOSE_PORT, “SVC1”, 40000, 0}
+            msg = new PRSMessage(PRSMessage.MESSAGE_TYPE.CLOSE_PORT, "SVC1", 40000, 0);
+            SendMessage(clientSocket, endPt, msg);
+
+            // expect {RESPONSE, “SVC1”, 40000, SUCCESS}
+            ExpectMessage(clientSocket, "{RESPONSE, SVC1, 40000, SUCCESS}");
 
             Console.WriteLine("TestCase 2 Passed!");
             Console.WriteLine();

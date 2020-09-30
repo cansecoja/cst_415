@@ -39,7 +39,17 @@ namespace PRSServer
                 public bool Expired(int timeout)
                 {
                     // TODO: PortReservation.Expired()
-                    // return true if timeout secons have elapsed since lastAlive
+                    // return true if timeout seconds have elapsed since lastAlive
+
+                    lastAlive = DateTime.Now;
+                    long timeout_long = Convert.ToInt64(timeout);
+                    long expired = lastAlive.Ticks + timeout_long;
+
+                    while (lastAlive.Ticks != expired)
+                    {
+                        lastAlive = DateTime.Now;
+                        return true;
+                    }
 
                     return false;
                 }
@@ -64,7 +74,6 @@ namespace PRSServer
                     // make this reservation available
                     available = true;
                     serviceName = null;
-
                 }
             }
 
@@ -146,7 +155,6 @@ namespace PRSServer
                 {
                     case PRSMessage.MESSAGE_TYPE.REQUEST_PORT:
                         {
-                            // TODO: check for expired ports
                             // try to reserve requested port send requested report back in response
                             response = RequestPort(msg.ServiceName);
                         }
