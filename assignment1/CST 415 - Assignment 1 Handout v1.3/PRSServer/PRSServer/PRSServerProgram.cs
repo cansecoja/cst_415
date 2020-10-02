@@ -41,15 +41,15 @@ namespace PRSServer
                     // TODO: PortReservation.Expired()
                     // return true if timeout seconds have elapsed since lastAlive
 
-                    lastAlive = DateTime.Now;
-                    long timeout_long = Convert.ToInt64(timeout);
-                    long expired = lastAlive.Ticks + timeout_long;
+                    //lastAlive = DateTime.Now;
+                    //long timeout_long = Convert.ToInt64(timeout);
+                    //long expired = lastAlive.Ticks + timeout_long;
 
-                    while (lastAlive.Ticks != expired)
-                    {
-                        lastAlive = DateTime.Now;
-                        return true;
-                    }
+                    //while (lastAlive.Ticks != expired)
+                    //{
+                    //    lastAlive = DateTime.Now;
+                    //    return true;
+                    //}
 
                     return false;
                 }
@@ -206,9 +206,19 @@ namespace PRSServer
                     case PRSMessage.MESSAGE_TYPE.LOOKUP_PORT:
                         {
                             // client wants to know the reserved port number for a named service
-                            // find the port
+                            // find the reserve port by port# and service name
+                            PortReservation reservation = ports.FirstOrDefault(p => !p.Available && p.ServiceName == msg.ServiceName);
+
                             // if found, send port number back
-                            // else, SERVICE_NOT_FOUND
+                            if (reservation != null)
+                            {
+                                response = new PRSMessage(PRSMessage.MESSAGE_TYPE.RESPONSE, msg.ServiceName, reservation.Port, PRSMessage.STATUS.SUCCESS);
+                            }
+                            else
+                            {
+                                // else, SERVICE_NOT_FOUND
+                                response = new PRSMessage(PRSMessage.MESSAGE_TYPE.RESPONSE, msg.ServiceName, msg.Port, PRSMessage.STATUS.SERVICE_NOT_FOUND);
+                            }
                         }
                         break;
 
@@ -242,13 +252,33 @@ namespace PRSServer
             ushort ENDING_CLIENT_PORT = 40099;
             int KEEP_ALIVE_TIMEOUT = 300;
 
-            // TODO: process command options
-            // -p < service port >
-            // -s < starting client port number >
-            // -e < ending client port number >
-            // -t < keep alive time in seconds >
+            try
+            {
+                // TODO: process command options
 
-            // TODO: check for valid STARTING_CLIENT_PORT and ENDING_CLIENT_PORT
+                // -p < service port >
+                // -s < starting client port number >
+                // -e < ending client port number >
+                // -t < keep alive time in seconds >
+
+                // TODO: check for valid STARTING_CLIENT_PORT and ENDING_CLIENT_PORT
+
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] == "-p")
+                        SERVER_PORT = ushort.Parse(args[i + 1]);
+                    if (args[i] == "-s")
+                        SERVER_PORT = ushort.Parse(args[i + 1]);
+                    if (args[i] == "-e")
+                        ENDING_CLIENT_PORT = ushort.Parse(args[i + 1]);
+                    if (args[i] == "-t")
+                        KEEP_ALIVE_TIMEOUT = int.Parse(args[i + 1]);
+                }
+            }
+            catch
+            {
+
+            }
 
             // initialize the PRS server
             PRS prs = new PRS(STARTING_CLIENT_PORT, ENDING_CLIENT_PORT, KEEP_ALIVE_TIMEOUT);
