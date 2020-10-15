@@ -1,9 +1,0 @@
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\bin\Debug\PRSServer.exe.config
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\bin\Debug\PRSServer.exe
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\bin\Debug\PRSServer.pdb
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\bin\Debug\PRSLib.dll
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\bin\Debug\PRSLib.pdb
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\obj\Debug\PRSServer.csprojAssemblyReference.cache
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\obj\Debug\PRSServer.csproj.CopyComplete
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\obj\Debug\PRSServer.exe
-C:\Users\canse\Desktop\cst_415\assignment1\CST 415 - Assignment 1 Handout v1.3\PRSServer\PRSServer\obj\Debug\PRSServer.pdb
