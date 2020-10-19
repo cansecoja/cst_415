@@ -1,0 +1,5 @@
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSLib\bin\Debug\PRSLib.dll
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSLib\bin\Debug\PRSLib.pdb
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSLib\obj\Debug\PRSLib.csprojAssemblyReference.cache
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSLib\obj\Debug\PRSLib.dll
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSLib\obj\Debug\PRSLib.pdb

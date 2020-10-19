@@ -1,0 +1,8 @@
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.exe.config
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.exe
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.pdb
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSLib.dll
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSLib.pdb
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.csproj.CopyComplete
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.exe
+C:\Users\canse\Desktop\cst_415\assignment2\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.pdb
